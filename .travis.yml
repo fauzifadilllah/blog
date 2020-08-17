@@ -8,12 +8,8 @@ before_script:
   - travis_retry composer install --prefer-source --no-interaction
   - cp .env.example .env
   - php artisan key:generate
-  - php artisan migrate --no-interaction -vvv
-#   - try {
-#     DB::connection()->getPdo();
-# } catch (\Exception $e) {
-#     die("Could not connect to the database.  Please check your configuration. error:" . $e );
-# }
+  - php artisan migrate 
+
 
 script:
   - vendor/bin/phpunit
