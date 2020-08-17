@@ -9,11 +9,11 @@ before_script:
   - cp .env.example .env
   - php artisan key:generate
   - php artisan migrate --no-interaction -vvv
-  - try {
-    DB::connection()->getPdo();
-} catch (\Exception $e) {
-    die("Could not connect to the database.  Please check your configuration. error:" . $e );
-}
+#   - try {
+#     DB::connection()->getPdo();
+# } catch (\Exception $e) {
+#     die("Could not connect to the database.  Please check your configuration. error:" . $e );
+# }
 
 script:
   - vendor/bin/phpunit
