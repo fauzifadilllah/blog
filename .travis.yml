@@ -10,7 +10,7 @@ before_script:
   - travis_retry composer install --prefer-source --no-interaction
   - cp .env.example .env
   - php artisan key:generate
-  - test
+
   - window.Echo.connector.pusher.connection.bind('connected', () => {
       console.log('connected');
     });
