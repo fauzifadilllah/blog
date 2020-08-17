@@ -11,9 +11,7 @@ before_script:
   - cp .env.example .env
   - php artisan key:generate
 
-  - window.Echo.connector.pusher.connection.bind('connected', () => {
-      console.log('connected');
-    });
+  
   
 
 
