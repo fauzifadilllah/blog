@@ -2,10 +2,7 @@ language: php
 
 php:
   - 7.3.7
-  
- env:
-- DB_CONNECTION=mysql
-- DB_DATABASE=cicd
+
  
 
 before_script:
