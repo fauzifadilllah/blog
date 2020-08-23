@@ -12,6 +12,8 @@ before_script:
   - composer -v
   - composer clear-cache
   - php artisan key:generate
+  - composer require laravel/ui
+  - php artisan ui vue --auth
   
 
 
