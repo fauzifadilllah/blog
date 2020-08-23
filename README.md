@@ -1,1 +1,1 @@
-[![Build Status](https://travis-ci.com/fauzifadilllah/blog.svg?branch=master)](https://travis-ci.com/fauzifadilllah/blog)
+[![Build Status](https://travis-ci.org/fauzifadilllah/blog.svg?branch=master)](https://travis-ci.org/fauzifadilllah/blog)
