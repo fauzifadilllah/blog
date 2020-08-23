@@ -5,21 +5,22 @@ php:
 
  
 
-before_script:
-  - travis_retry composer self-update
-  - travis_retry composer install --prefer-source --no-interaction
-  - cp .env.example .env
-  - composer -v
-  - composer clear-cache
-  - php artisan key:generate
-  - composer require laravel/ui
-  
-  
-
-
-  
-  
-
+before_script: 
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter 
+- chmod +x ./cc-test-reporter 
+- ./cc-test-reporter before-build
 
 script:
-  - vendor/bin/phpunit
+
+# Running unit tests with clover coverage report 
+- vendor/bin/codecept run unit --coverage --coverage-xml
+
+after_script: 
+- mv tests/_output/coverage.xml clover.xml 
+- ./cc-test-reporter after-build --coverage-input-type clover --id 12345 --exit-code $TRAVIS_TEST_RESULT
+  
+  
+
+
+  
+
