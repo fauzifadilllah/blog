@@ -41,7 +41,7 @@ before_script:
   - composer install --prefer-source --no-interaction
   - cp .env.example .env
   - php artisan key:generate
-  - mysql -e 'CREATE DATABASE cicd;'
+  - mysql -e 'CREATE DATABASE cites;'
 
 script:
   - vendor/bin/phpunit
