@@ -39,7 +39,7 @@ before_script:
   - composer install --prefer-source --no-interaction
   - cp .env.example .env
   - php artisan key:generate
-  - if [[ "$DB" == "mysql" ]]; then mysql echo "Build succes" 
+  - if [[ "$DB" == "mysql" ]]; then mysql echo "Build succes" fi;
 
 script:
   - vendor/bin/phpunit
