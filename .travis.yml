@@ -35,8 +35,8 @@ matrix:
 #script: phpunit --configuration phpunit_$DB.xml --coverage-text
 
 before_script:
-  - travis_retry composer self-update
-  - travis_retry composer install --prefer-source --no-interaction
+  - composer self-update
+  - composer install --prefer-source --no-interaction
   - cp .env.example .env
   - php artisan key:generate
 
