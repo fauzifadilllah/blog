@@ -39,6 +39,7 @@ before_script:
   - composer install --prefer-source --no-interaction
   - cp .env.example .env
   - php artisan key:generate
+  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS hello_world_test;" -uroot; fi
 
 script:
   - vendor/bin/phpunit
