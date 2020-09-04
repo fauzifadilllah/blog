@@ -13,6 +13,7 @@ php:
 # optionally specify a list of environments, for example to test different RDBMS
 env:
   - DB=mysql
+  
   - DB=pgsql
 
 services:
@@ -42,6 +43,8 @@ before_script:
   - cp .env.example .env
   - php artisan key:generate
   - mysql -e 'CREATE DATABASE cites;'
+  - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS hello_world_test;" -uroot; fi
+
 
 script:
   - vendor/bin/phpunit
